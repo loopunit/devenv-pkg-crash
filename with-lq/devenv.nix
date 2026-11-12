@@ -13,7 +13,7 @@
       qpakman = final.callPackage ../packages/qpakman.nix { };
       ericw-tools = final.callPackage ../packages/ericw-tools.nix { };
       wasted-hvcc = final.callPackage ../packages/wasted-hvcc.nix { };
-      librequake = final.callPackage ./packages/librequake.nix { };
+      librequake = final.callPackage ../packages/librequake.nix { };
     })
   ];
 
