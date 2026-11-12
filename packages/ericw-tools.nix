@@ -25,18 +25,22 @@ stdenv.mkDerivation rec {
   };
 
   src = fetchFromGitHub {
-    #owner = "ericwa";
-    #repo = "ericw-tools";
-    #rev = "36eec1da2a194467e6baac2f444c2dd04b57d266";
-    #sha256 = "sha256-Xfhz3PBBtpHGgMrMPJqK/14jxv1H3KHmwrWJaVUiwcc=";
-
-    owner = "auto-pigeon";
+    owner = "ericwa";
     repo = "ericw-tools";
-    rev = "b7c04a5bc2a195f4317e3c900ad4d8360a319861";
-    sha256 = "sha256-jSLgb5e1Mz/2oOpnqj4e67o7EYQbsvLiSXjcLLOesMs=";
+    rev = "36eec1da2a194467e6baac2f444c2dd04b57d266";
+    sha256 = "sha256-Xfhz3PBBtpHGgMrMPJqK/14jxv1H3KHmwrWJaVUiwcc=";
+
+    #owner = "auto-pigeon";
+    #repo = "ericw-tools";
+    #rev = "b7c04a5bc2a195f4317e3c900ad4d8360a319861";
+    #sha256 = "sha256-jSLgb5e1Mz/2oOpnqj4e67o7EYQbsvLiSXjcLLOesMs=";
     fetchSubmodules = true;
   };
 
+  patches = [
+    ./ericw-tools-disable-ipo.patch
+  ];
+  
   postUnpack = ''
     pushd source/3rdparty
     ln -s ${fmt.src} fmt

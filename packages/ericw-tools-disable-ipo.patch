@@ -1,0 +1,24 @@
+:100644 100644 5795dd0a 7c872547 M	CMakeLists.txt
+
+diff --git c/CMakeLists.txt i/CMakeLists.txt
+index 5795dd0a..7c872547 100644
+--- c/CMakeLists.txt
++++ i/CMakeLists.txt
+@@ -21,7 +21,7 @@ if(NOT GIT_DESCRIBE)
+ 	# See: https://docs.github.com/en/actions/reference/environment-variables#default-environment-variables
+ 	if(NOT ("$ENV{GITHUB_REF_NAME}" STREQUAL ""))
+ 		set(GIT_DESCRIBE "$ENV{GITHUB_REF_NAME}")
+-		
++
+ 		message(STATUS "using version label \"${GIT_DESCRIBE}\" from GITHUB_REF_NAME")
+ 	endif()
+ endif()
+@@ -50,7 +50,7 @@ set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_C_STANDARD 99)
+ 
+-set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
++set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
+ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG OFF)
+ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO OFF)
+ 
